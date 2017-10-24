@@ -1,0 +1,7 @@
+{
+  "name": "prollable",
+  "version": "1.0.0",
+  "description": "Convenient functions for composing nullables and conditions using Promises.",
+  "repository": "christianhg/prollable",
+  "main": "index.js"
+}
