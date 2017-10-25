@@ -70,7 +70,7 @@ function authorize(req) {
 }
 ```
 
-You can even go one step further an abstract each Promise to its own function to allow a more point-free style:
+You can even go one step further and abstract each Promise to its own function to allow a more point-free style:
 
 ```js
 // Request → Promise<Email>
