@@ -3,9 +3,7 @@
 [![npm module](https://badge.fury.io/js/prollable.svg)](https://www.npmjs.org/package/prollable)
 [![Dependencies](https://david-dm.org/christianhg/prollable.svg)](https://david-dm.org/christianhg/prollable)
 
-> Convenient functions for composing nullables and conditions using Promises.
-
-Promises are great since they encourage error handling and compose easily. Why not use them as wrappers for non-async computations too?
+Promises are great since they encourage error handling and compose easily. Why not use them as wrappers for non-async code too? `prollable` exposes some convenient functions for composing nullables and conditions using Promises.
 
 `Promise<¯\_(ツ)_/¯>`
 
@@ -87,6 +85,26 @@ const authorize = req =>
   getEmail(req)
     .then(validateEmail)
     .then(signJwt)
+```
+
+It's important to note that `prollable` is just as much about the idea of using Promises more extensively for (propagated) error handling. It's completely possible to reach the same chainable result using the Promise constructor inside the `onFulfilled` callback of `.then`:
+
+```js
+// Request → Promise<JWT>
+function authorize(req) {
+  return new Promise(
+    (resolve, reject) =>
+      reg.body.email ? resolve(req.body.email) : reject('Email missing')
+  )
+    .then(
+      email =>
+        new Promise(
+          (resolve, reject) =>
+            emails.includes(email) ? resolve(email) : reject('Unknown email')
+        )
+    )
+    .then(signJwt)
+}
 ```
 
 ## API
