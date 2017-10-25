@@ -3,5 +3,11 @@
   "version": "1.0.0",
   "description": "Convenient functions for composing nullables and conditions using Promises.",
   "repository": "christianhg/prollable",
-  "main": "index.js"
+  "main": "index.js",
+  "scripts": {
+    "test": "ava tests.js"
+  },
+  "devDependencies": {
+    "ava": "^0.23.0"
+  }
 }
