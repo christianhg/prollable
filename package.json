@@ -4,6 +4,9 @@
   "description": "Convenient functions for composing nullables and conditions using Promises.",
   "repository": "christianhg/prollable",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "test": "ava tests.js"
   },
