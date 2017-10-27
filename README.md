@@ -3,7 +3,7 @@
 [![npm module](https://badge.fury.io/js/prollable.svg)](https://www.npmjs.org/package/prollable)
 [![Dependencies](https://david-dm.org/christianhg/prollable.svg)](https://david-dm.org/christianhg/prollable)
 
-Promises are great since they encourage error handling and compose easily. Why not use them as wrappers for non-async code too? `prollable` exposes some convenient functions for composing nullables and conditions using Promises.
+Promises are great since they encourage error handling and compose easily. Why not use them as wrappers for synchronous code too? `prollable` exposes some convenient functions for composing nullables and conditions using Promises.
 
 `Promise<¯\_(ツ)_/¯>`
 
