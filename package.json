@@ -4,13 +4,18 @@
   "description": "Convenient functions for composing nullables and conditions using Promises.",
   "repository": "christianhg/prollable",
   "main": "index.js",
+  "esnext": "index.mjs",
   "files": [
-    "index.js"
+    "index.js",
+    "index.mjs"
   ],
   "scripts": {
     "test": "ava tests.js"
   },
   "devDependencies": {
     "ava": "^0.23.0"
+  },
+  "dependencies": {
+    "@std/esm": "^0.15.0"
   }
 }

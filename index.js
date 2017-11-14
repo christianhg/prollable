@@ -1,11 +1,3 @@
-function fromCondition(condition, resolveTo, rejectTo) {
-  return condition ? Promise.resolve(resolveTo) : Promise.reject(rejectTo)
-}
+const load = require('@std/esm')(module)
 
-function fromNullable(nullable, rejectTo) {
-  return nullable !== null && nullable !== undefined
-    ? Promise.resolve(nullable)
-    : Promise.reject(rejectTo)
-}
-
-module.exports = { fromCondition, fromNullable }
+module.exports = load('./index.mjs').default
