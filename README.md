@@ -65,7 +65,7 @@ const { fromCondition, fromNullable } = require('prollable')
 // Request → Promise<JWT>
 function authorize(req) {
   return fromNullable(req.body.email, 'Email missing')
-    .then(email => fromCondition(emails.includes(email), 'Unknown email', email))
+    .then(email => fromCondition(emails.includes(email), email, 'Unknown email'))
     .then(signJwt)
 }
 ```
@@ -78,7 +78,7 @@ const getEmail = req => fromNullable(req.body.email, 'Email missing')
 
 // Email → Promise<Email>
 const validateEmail = email =>
-  fromCondition(emails.includes(email), 'Unknown email', email)
+  fromCondition(emails.includes(email), email, 'Unknown email')
 
 // Request → Promise<JWT>
 const authorize = req =>
